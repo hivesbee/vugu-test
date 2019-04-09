@@ -1,0 +1,26 @@
+<div class="todo">
+    <span vg-html='data.Message' @click="data.ToggleMessage()"></span>
+</div>
+
+<style>
+</style>
+
+<script type="application/x-go">
+type TodoData struct {
+    Message string
+}
+
+func (comp *Todo) NewData(props vugu.Props) (interface{}, error) {
+  ret := &TodoData{}
+  ret.Message = "a"
+  return ret, nil
+}
+
+func (data *TodoData) ToggleMessage() {
+    if (data.Message == "a") {
+        data.Message = "b"
+    } else {
+        data.Message = "a"
+    }
+}
+</script>
